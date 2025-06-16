@@ -1,5 +1,8 @@
 // SELECIONA OS ELEMENTOS DO FORMULÁRIO.
+const form = document.querySelector("form")
 const amount = document.getElementById("amount")
+const expense = document.getElementById("expense")
+const category = document.getElementById("category")
 
 // CAPTURA O EVENTO DE IMPUT PARA FORMATAR O VALOR EM APENAS NUMEROS.
 amount.oninput = () => {
@@ -21,4 +24,8 @@ function formatCurrencyBRL(value){
     })
 
     return value
+}
+
+form.onsubmit = () => {
+    event.preventDefault()
 }
