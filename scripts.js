@@ -26,6 +26,16 @@ function formatCurrencyBRL(value){
     return value
 }
 
+// CAPTURA O EVENTO DE SUBMIT DO FORMULÁRIO PARA OBTER OS VALORES.
 form.onsubmit = () => {
     event.preventDefault()
+
+    const newExpense = {
+        id: new Date().getTime(),
+        expense: expense.value,
+        category_id: category.value,
+        category_name: category.options[category.selectedIndex].text,
+        amount: amount.value,
+        created_at: new Date(),
+    }    
 }
