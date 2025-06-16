@@ -30,6 +30,7 @@ function formatCurrencyBRL(value){
 form.onsubmit = () => {
     event.preventDefault()
 
+    // CRIA UM OBJETO COM OS DETALHES NA NOVA DESPESA
     const newExpense = {
         id: new Date().getTime(),
         expense: expense.value,
@@ -38,4 +39,14 @@ form.onsubmit = () => {
         amount: amount.value,
         created_at: new Date(),
     }    
+
+    expenseAdd(newExpense)
+}
+
+function expenseAdd(newExpense){
+    try {
+        
+    }catch (error){
+        alert("Não foi possível atualizar a lista de despesas!")
+    }
 }
