@@ -7,6 +7,7 @@ const category = document.getElementById("category")
 // SELECIONA OS ELEMENTOS DA LISTA
 const expenseList = document.querySelector("ul")
 const expenseQuantity = document.querySelector("aside header p span")
+const expensesTotal = document.querySelector("aside header h2")
 
 // CAPTURA O EVENTO DE IMPUT PARA FORMATAR O VALOR EM APENAS NUMEROS.
 amount.oninput = () => {
@@ -116,7 +117,19 @@ function updateTotals() {
 
         for(let item = 0; item < items.length; item++) {
             const itemAmount = items[item].querySelector(".expense-amount")
+
+            let value = itemAmount.textContent.replace(/[^\d]/g, "").replace(",", ".")
+
+            value = parseFloat(value)
+
+            if(isNaN(value)){
+                return alert("Não foi possível calcular o total. O valor não parece ser um número.")
+            }
+
+            total += Number(value)
         }
+
+        expensesTotal.textContent = total
         
     }catch(error){
         console.log(error)
