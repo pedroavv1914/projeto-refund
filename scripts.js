@@ -4,6 +4,9 @@ const amount = document.getElementById("amount")
 const expense = document.getElementById("expense")
 const category = document.getElementById("category")
 
+// SELECIONA OS ELEMENTOS DA LISTA
+const expenseList = document.querySelector("ul")
+
 // CAPTURA O EVENTO DE IMPUT PARA FORMATAR O VALOR EM APENAS NUMEROS.
 amount.oninput = () => {
     let value = amount.value.replace(/\D/g, "")
@@ -45,9 +48,22 @@ form.onsubmit = () => {
 
 function expenseAdd(newExpense){
     try {
+
+        //CRIA O ELEMENTO PARA ADICIONAR O ITEM (LI) NA LISTA (UL).
         const expenseItem = document.createElement("li")
         expenseItem.classList.add("expense")
+
+        // CRIA O ÍCONE DA CATEGORIA.
+        const expenseIcon = document.createElement("img")
+        expenseIcon.setAttribute("src", `img/${newExpense.category_id}.svg`)
+        expenseIcon.setAttribute("alt", newExpense.category_name)
+
+        // ADICIONA AS INFORMAÇÕES DO ITEM.
+        expenseItem.append(expenseIcon)
+        expenseList.append(expenseItem)
+
     }catch (error){
         alert("Não foi possível atualizar a lista de despesas!")
+        console.log(error)
     }
 }
