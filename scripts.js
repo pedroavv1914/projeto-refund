@@ -142,3 +142,10 @@ function updateTotals() {
         console.log(error)
     }
 }
+
+// EVENTO QUE CAPTURA O CLIQUE NOS ITENS DA LISTA
+expenseList.addEventListener("click", function(event) {
+    if (event.target.classList.contains("remove-icon")){
+
+    }
+})
