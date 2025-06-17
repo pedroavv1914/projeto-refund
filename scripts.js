@@ -9,6 +9,7 @@ const expenseList = document.querySelector("ul")
 
 // CAPTURA O EVENTO DE IMPUT PARA FORMATAR O VALOR EM APENAS NUMEROS.
 amount.oninput = () => {
+    // Obtém o valor atual do input e remove os caracteres não numéricos
     let value = amount.value.replace(/\D/g, "")
 
     //TRANSFORMA O VALOR EM CENTAVOS.
@@ -26,6 +27,7 @@ function formatCurrencyBRL(value){
         currency: "BRL",
     })
 
+    // Retorna o valor formatado 
     return value
 }
 
@@ -43,6 +45,7 @@ form.onsubmit = () => {
         created_at: new Date(),
     }    
 
+    // Chama a função que irá adicionar o item na lista
     expenseAdd(newExpense)
 }
 
@@ -73,15 +76,20 @@ function expenseAdd(newExpense){
         // ADICIONA NAME E CATEGORIA EM EXPENSE INFO
         expenseInfo.append(expenseName, expenseCategory)
 
-        // ADICIONA AS INFORMAÇÕES NO ITEM.
-        expenseItem.append(expenseIcon, expenseInfo)
+        // Criando o valor da despesa
+        const expenseAmount = document.createElement("span")
+        expenseAmount.classList.add("expense-amount")
+        expenseAmount.innerHTML = `<small>R$</small>${newExpense.amount.toUpperCase().replace("R$", "")}`
 
-        // ADICIONA AS INFORMAÇÕES DO ITEM.
-        expenseItem.append(expenseIcon)
+
+        // ADICIONA AS INFORMAÇÕES NO ITEM
+        expenseItem.append(expenseIcon, expenseInfo, expenseAmount)
+
+        // ADICIONA O ITEM NA LISTA
         expenseList.append(expenseItem)
 
-    }catch (error){
-        alert("Não foi possível atualizar a lista de despesas!")
+    } catch (error) {
+        alert("Não foi possível atualizar a lista de despesas.")
         console.log(error)
     }
 }
