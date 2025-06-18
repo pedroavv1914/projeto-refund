@@ -8,7 +8,6 @@
 - [🏗️ Project Structure](#project-structure)
 - [🚀 Getting Started](#getting-started)
 - [🎨 Screenshots](#screenshots)
-- [📝 License](#license)
 
 ## ✨ Features
 - 📊 Interactive refund calculator
@@ -38,8 +37,5 @@ project-refund/
 
 ## 🎨 Screenshots
 ![Screenshot](img/screenshot.png) *Example of the application interface*
-
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Made with ❤️ by [Your Name]
