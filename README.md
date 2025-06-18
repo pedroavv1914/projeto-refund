@@ -38,4 +38,4 @@ project-refund/
 ## 🎨 Screenshots
 ![Screenshot](img/screenshot.png) *Example of the application interface*
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Pedro.
