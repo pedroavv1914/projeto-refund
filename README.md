@@ -38,4 +38,8 @@ project-refund/
 ## 🎨 Screenshots
 ![Screenshot](img/screenshot.png) *Example of the application interface*
 
+## 🙏 Credits
+
+Developed as part of the RocketSeat FullStack Formation.
+
 Made with ❤️ by Pedro.
